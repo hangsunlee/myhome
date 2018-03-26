@@ -7,8 +7,12 @@
  */
 include_once './db/db.php';
 $idx=$_POST['idx'];
-$sql="delete from git where idx=$idx";
-echo $sql;
+$up=$_POST['submit'];
+if($up==0) {
+    $sql = "delete from git where idx=$idx";
+}else{
+    
+}
 $stmt=$pdo->prepare($sql);
 $stmt->execute();
 echo "<script>location.href='./git_list.php'</script>";
